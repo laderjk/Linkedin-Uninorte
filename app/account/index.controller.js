@@ -146,7 +146,7 @@
                 });
         }
 
-        function getPerfil(query, FlashService) {
+        function getPerfil(query) {
             //console.log("id");
             //console.log(query);
             UserService.GetById(query)

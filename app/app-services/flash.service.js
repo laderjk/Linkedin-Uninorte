@@ -12,7 +12,6 @@
 
         service.Success = Success;
         service.Error = Error;
-
         service.getProperty = getProperty;
         service.setProperty = setProperty;
 
