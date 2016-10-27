@@ -6,7 +6,7 @@
         .controller('Account.IndexController', Controller);
 
 
-    function Controller($window, UserService, FlashService, $scope, $route) {
+    function Controller($window, UserService, FlashService, $scope) {
         var vm = this;
 
         //console.log(FlashService.getProperty());
@@ -158,7 +158,7 @@
                 console.log("Perfil");
                 //console.log(vm.perfil);
                 $window.location = '#/profile';
-                $route.reload();
+                //$route.reload();
             });
         }
 
