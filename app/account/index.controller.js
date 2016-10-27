@@ -151,7 +151,7 @@
             //console.log(query);
             UserService.GetById(query)
             .then(function (per) {
-                vm.perfil = per;
+                vm.mostrar = per;
                 console.log("Perfil");
                 //console.log(vm.perfil);
                 $window.location = '#/profile';
