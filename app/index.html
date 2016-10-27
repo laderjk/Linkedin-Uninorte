@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LinkedIn Uninorte</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="app-content/app.css" rel="stylesheet" />
+</head>
+<body class="container">
+    <!-- header -->
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" width="30" src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico">
+                </a>
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Inicio</a></li>
+                    <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Cuenta</a></li>
+                    <li ng-class="{active: activeTab === 'jobs'}"><a ui-sref="jobs">Trabajos</a></li>
+                    <li ng-class="{active: activeTab === 'posts'}"><a ui-sref="posts">Publicaciones</a></li>
+                    <li ng-class="{active: activeTab === 'friends'}"><a ui-sref="friends">Amigos</a></li>
+                    <li ng-class="{active: activeTab === 'about'}"><a ui-sref="about">Acerca de</a></li>
+                    <li><a href="/login" target="_self">Cerrar Sesión</a></li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="flash-message" ng-if="flash">
+            <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main ui-view></main>
+
+    <!-- footer -->
+    <footer></footer>
+
+    <!-- external scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+    <!-- application scripts -->
+    <script src="app.js"></script>
+    <script src="app-services/user.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+    <script src="home/index.controller.js"></script>
+    <script src="account/index.controller.js"></script>
+</body>
+</html>

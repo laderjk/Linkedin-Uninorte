@@ -1,0 +1,28 @@
+﻿<h1>Mis Publicaciones</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Empresa</th>
+                <th>Nombre de Contacto</th>
+                <th>Telefono de Contacto</th>
+                <th>Descripcion</th>
+                <th>Salario</th>
+                <th>Carreras afines</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in vm.user.publicaciones">
+                <td>{{ item.empresa_publicacion }}</td>
+                <td>{{ item.contacto }}</td>
+                <td>{{ item.telefono }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>{{ item.salario }}</td>
+                <td>{{ item.carreras_afines }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col-md-1">
+    <a style="margin-top:20px" class="btn btn-default" href="#/new/post">Agregar Publicacion</a>
+</div>

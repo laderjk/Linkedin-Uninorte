@@ -1,0 +1,5 @@
+﻿{
+  "connectionString": "mongodb://heroku_f44vfl0c:j4gdfocm9fgg4u8s7v1ntmtgv9@ds029486.mlab.com:29486/heroku_f44vfl0c",
+  "apiUrl": "https://linkedin-uninorte.herokuapp.com/api",
+  "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
+}

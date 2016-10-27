@@ -1,0 +1,62 @@
+﻿<h1>Mis Trabajos</h1>
+<div class="container">
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Empresa</th>
+              <th>Cargo</th>
+              <th>Fecha de Inicio</th>
+              <th>Fecha de Finalización</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr ng-repeat="item in vm.user.trabajos | orderBy : '-fecha_inicio' ">
+              <td>{{ item.empresa }}</td>
+              <td>{{ item.cargo }}</td>
+              <td>{{ item.fecha_inicio.split('T')[0] }}</td>
+              <td>{{ item.fecha_fin.split('T')[0] }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<div class="container">
+  <h1>Añadir Trabajo</h1>
+  <div class="col-md-1">
+      <a style="margin-top:20px" class="btn btn-default" href="#/new/job">Agregar Trabajo</a>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Buscar Trabajo</h1>
+
+  <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+          <input type="text" id="busquedatrabajo" class="form-control" ng-model="vm.query" placeholder="Empresa o Descripcion">
+      </div>
+      <button class="btn btn-primary" ng-click="vm.findJob()">Buscar</button>
+  </form>
+</div>
+<div class="container">
+  <table class="table">
+      <thead>
+          <tr>
+                <th>Empresa</th>
+                <th>Contacto</th>
+                <th>Telefono</th>
+                <th>Descripcion</th>
+                <th>Salario</th>
+                <th>Carreras Afines</th>
+          </tr>
+      </thead>
+      <tbody ng-repeat="pub in vm.mostrar">
+          <tr ng-repeat="ter in pub.publicaciones">
+                <td>{{ter.empresa_publicacion}}</td>
+                <td>{{ter.contacto }}</td>
+                <td>{{ter.telefono }}</td>
+                <td>{{ter.descripcion }}</td>
+                <td>{{ter.salario }}</td>
+                <td>{{ter.carreras_afines}}</td> 
+          </tr>
+      </tbody>
+  </table>
+</div>

@@ -1,0 +1,91 @@
+﻿<h1>Bienvenido {{vm.user.firstName}}!!</h1>
+
+        <h1>Mis Amigos</h1>
+   
+
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Carrera</th>
+                        <th>Semestre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in vm.user.amigos">
+                        <td>{{ item.firstName }}</td>
+                        <td>{{ item.lastName }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.carrera }}</td>
+                        <td>{{ item.semestre }}</td>
+                        <td>
+                            <button class="btn btn-primary" ng-click="vm.getPerfil(item._id)">Ver Perfil</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <h1>Trabajos Sugeridos</h1>
+        <div class="container">
+          <table class="table">
+              <thead>
+                  <tr>
+                        <th>Empresa</th>
+                        <th>Contacto</th>
+                        <th>Telefono</th>
+                        <th>Descripcion</th>
+                        <th>Salario</th>
+                        <th>Carreras Afines</th>
+                  </tr>
+              </thead>
+              <tbody ng-repeat="pub in vm.suggestedJob">
+                  <tr ng-repeat="ter in pub.publicaciones">
+                        <td>{{ter.empresa_publicacion}}</td>
+                        <td>{{ter.contacto }}</td>
+                        <td>{{ter.telefono }}</td>
+                        <td>{{ter.descripcion }}</td>
+                        <td>{{ter.salario }}</td>
+                        <td>{{ter.carreras_afines}}</td> 
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+
+        <h1>Amigos Sugeridos</h1>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Carrera</th>
+                        <th>Semestre</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in vm.sugeridos">
+                        <td>{{ item.firstName }}</td>
+                        <td>{{ item.lastName }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.carrera }}</td>
+                        <td>{{ item.semestre }}</td>
+                        <td>
+                            <button class="btn btn-primary" ng-click="vm.agregar(item.id, item.firstName, item.lastName, item.email, item.carrera, item.semestre)">Agregar</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" ng-click="vm.getPerfil(item.id)">Ver Perfil</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
