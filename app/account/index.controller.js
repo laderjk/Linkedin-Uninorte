@@ -146,11 +146,12 @@
                 });
         }
 
-        function getPerfil(query) {
+        function getPerfil(query, FlashService) {
             //console.log("id");
             //console.log(query);
             UserService.GetById(query)
             .then(function (per) {
+                FlashService.setProperty(per);
                 vm.mostrar = per;
                 console.log("Perfil");
                 //console.log(vm.perfil);
