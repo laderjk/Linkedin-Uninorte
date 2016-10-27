@@ -30,14 +30,9 @@
             // get current user
             UserService.GetCurrent().then(function (user) {
                 vm.user = user;
-                //Perfil Actual
-                FlashService.getProperty()
-                    .then(function (result) {
-                        vm.perfil = result
-                    })
-                    .catch(function (error) {
-                        FlashService.Error(error);
-                    });
+                //Perfil Seleccionado
+                vm.perfil = FlashService.getProperty();
+
                 //Amigos Sugeridos
                 var misAmigos = vm.user.amigos;
                 
