@@ -1,1 +1,87 @@
-<h1>Bienvenido {{vm.perfil}}!!</h1>
+<h1>Perfil de {{vm.perfil.firstName}}!!</h1>
+
+<h4>Nombre</h4>
+<h4>Apellido</h4>
+<h4>Nombre de Usuario</h4>
+<h4>Email</h4>
+<h4>Carrera</h4>
+<h4>Semestre</h4>
+
+<h1>Trabajos de {{vm.perfil.firstName}}!!</h1>
+<div class="container">
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Empresa</th>
+              <th>Cargo</th>
+              <th>Fecha de Inicio</th>
+              <th>Fecha de Finalización</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr ng-repeat="item in vm.perfil.trabajos | orderBy : '-fecha_inicio' ">
+              <td>{{ item.empresa }}</td>
+              <td>{{ item.cargo }}</td>
+              <td>{{ item.fecha_inicio.split('T')[0] }}</td>
+              <td>{{ item.fecha_fin.split('T')[0] }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+
+<h1>Publicaciones de {{vm.perfil.firstName}}!!</h1>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Empresa</th>
+                <th>Nombre de Contacto</th>
+                <th>Telefono de Contacto</th>
+                <th>Descripcion</th>
+                <th>Salario</th>
+                <th>Carreras afines</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in vm.perfil.publicaciones">
+                <td>{{ item.empresa_publicacion }}</td>
+                <td>{{ item.contacto }}</td>
+                <td>{{ item.telefono }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>{{ item.salario }}</td>
+                <td>{{ item.carreras_afines }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h1>Amigos de {{vm.perfil.firstName}}!!</h1>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Carrera</th>
+                        <th>Semestre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in vm.perfil.amigos">
+                        <td>{{ item.firstName }}</td>
+                        <td>{{ item.lastName }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.carrera }}</td>
+                        <td>{{ item.semestre }}</td>
+                        <td>
+                            <button class="btn btn-primary" ng-click="vm.getPerfil(item.id)">Ver Perfil</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
